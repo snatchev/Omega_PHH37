@@ -11,6 +11,9 @@
 
 #include "Arduino.h"
 
+#define Omega_PHH37_DisplayMode_pH 0
+#define Omega_PHH37_DisplayMode_mV 1
+
 class Omega_PHH37
 {
   public:
@@ -22,6 +25,7 @@ class Omega_PHH37
     char tempUnits();
     float pH();
     int rangeCode();
+    int displayMode();
   private:
     char _input[64];
     char _range_code[3];

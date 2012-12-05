@@ -106,6 +106,11 @@ int Omega_PHH37::rangeCode()
   return atoi(_range_code);
 }
 
+int Omega_PHH37::displayMode()
+{
+  return Omega_PHH37_DisplayMode_mV;
+}
+
 bool Omega_PHH37::validInput()
 {
   //Serial.println(_input);
