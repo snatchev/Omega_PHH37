@@ -21,19 +21,18 @@ Omega_PHH37::Omega_PHH37()
 void Omega_PHH37::begin()
 {
   Serial.begin(9600, SERIAL_8E2);
-  //Serial.print("Omega PHH37");
 }
 
 bool Omega_PHH37::read()
 {
-  char *p = &_input[0];
   memset(_input, '\0', 64);
 
-  Serial.write("#001N\n");
-  Serial.flush();
+  Serial.write("#001N\r\n");
 
-  while(Serial.available() > 0 && p != 0) {
-    *p++ = Serial.read();
+  delay(1);
+
+  if(Serial.available()) {
+    Serial.readBytes(_input, 21);
   }
 
   strncpy(_range_code, _input+5, 2);
@@ -113,7 +112,6 @@ int Omega_PHH37::displayMode()
 
 bool Omega_PHH37::validInput()
 {
-  //Serial.println(_input);
   if(strlen(_input) != 21)
     return false;
 
