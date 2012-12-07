@@ -21,6 +21,9 @@ MAX232 chip required for converting RS232 voltage to TTL.
 
 ![schematic](http://3.bp.blogspot.com/_xBOs6PWgasI/THnpcjC5zHI/AAAAAAAAAMw/xG8d9NQjHys/s1600/schematic+max232.gif)
 
+Also, check the [tutorial how to use wire MAX232](http://arduino.cc/en/Tutorial/ArduinoSoftwareRS232).
+The part about the software serial is out of date.
+
 _NOTE_: connect the PHH37 Rx/Tx wires to pins 0, 1 on the Arduino UNO.
 When uploading a new sketch, you must disconnect these two wires. Otherwise the sketch will not upload.
 
